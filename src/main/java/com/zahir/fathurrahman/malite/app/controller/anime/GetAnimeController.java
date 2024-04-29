@@ -1,4 +1,4 @@
-package com.zahir.fathurrahman.malite.app.get_anime.controller;
+package com.zahir.fathurrahman.malite.app.controller.anime;
 
 import com.zahir.fathurrahman.malite.core.model.BaseResponseArray;
 
