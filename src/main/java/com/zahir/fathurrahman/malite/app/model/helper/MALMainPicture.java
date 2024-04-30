@@ -1,4 +1,4 @@
-package com.zahir.fathurrahman.malite.app.model;
+package com.zahir.fathurrahman.malite.app.model.helper;
 
 import lombok.Getter;
 import lombok.Setter;
