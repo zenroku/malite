@@ -29,8 +29,9 @@ public class CustomMapper {
                 field.setAccessible(true);
                 Object plainVal = field.get(qp);
                 if (plainVal != null) {
-                    uri.queryParam(e,plainVal);
+                    uri.queryParam(StrUtil.camelToSnake(e),plainVal);
                 }
+                field.setAccessible(false);
             } catch (Exception ex) {
                 log.info("invalid param of {}\n",e,ex);
             }

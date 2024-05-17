@@ -7,5 +7,4 @@ public interface AnimeService {
     BaseResponseData getAnime(HttpServletRequest request);
     BaseResponseData getAnimeDetail(HttpServletRequest request);
     BaseResponseData getAnimeRanking(HttpServletRequest request);
-    BaseResponseData getSeasonalAnime(HttpServletRequest request);
 }

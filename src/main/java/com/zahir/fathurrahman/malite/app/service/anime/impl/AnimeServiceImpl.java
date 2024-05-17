@@ -79,11 +79,26 @@ public class AnimeServiceImpl implements AnimeService {
 
     @Override
     public BaseResponseData getAnimeRanking(HttpServletRequest request) {
-        return null;
-    }
+        QueryParameter qp = CustomMapper.mapQueryParam(request, QueryParameter.class);
+        log.info("GET ANIME RANKING WITH PARAMETER : {} ",new Gson().toJson(qp));
+        BaseResponseData baseResponse = new BaseResponseData();
 
-    @Override
-    public BaseResponseData getSeasonalAnime(HttpServletRequest request) {
-        return null;
+        MALHTTPResponse malResponse = malRequestService.get("/anime/ranking", qp, Modules.GET_ANIME_RANKING);
+        if (malResponse.getResponseCode() == 200) {
+            try {
+                MALNodeList<Map<String,Object>> response = new ObjectMapper().readValue(malResponse.getData(),new TypeReference<>(){});
+                baseResponse.setData(response.getData());
+                baseResponse.setMessage("Success");
+                return baseResponse;
+            } catch (Exception e) {
+                log.info("invalid response data of {}",malResponse.getData());
+            }
+        }
+
+        baseResponse.setMessage(malResponse.getMessage());
+        baseResponse.setSuccess(false);
+        baseResponse.setStatus(malResponse.getResponseCode());
+
+        return baseResponse;
     }
 }

@@ -17,4 +17,6 @@ public class QueryParameter {
     @JsonProperty("ranking_type")
     private String rankingType;
     private String sort;
+    private Integer year;
+    private String season;
 }
