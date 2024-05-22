@@ -1,6 +1,7 @@
 package com.zahir.fathurrahman.malite.core.util;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class StrUtil {
     public static boolean isNull(Object str){
@@ -16,21 +17,10 @@ public class StrUtil {
     }
     public static String snakeToCamel(String str)
     {
-        // Capitalize first letter of string
-        str = str.substring(0, 1).toUpperCase()
-                + str.substring(1);
+        str = Pattern.compile("_([a-z])")
+                .matcher(str)
+                .replaceAll(m -> m.group(1).toUpperCase());
 
-        while (str.contains("_")) {
-            str = str
-                    .replaceFirst(
-                            "_[a-z]",
-                            String.valueOf(
-                                    Character.toUpperCase(
-                                            str.charAt(
-                                                    str.indexOf("_") + 1))));
-        }
-
-        // Return string
         return str;
     }
 }

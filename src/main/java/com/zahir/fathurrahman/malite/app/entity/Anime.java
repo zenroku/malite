@@ -1,5 +1,6 @@
 package com.zahir.fathurrahman.malite.app.entity;
 
+import com.zahir.fathurrahman.malite.app.constant.Tables;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "anime")
+@Table(name = Tables.ANIME)
 public class Anime {
     @Id
     private Long id;

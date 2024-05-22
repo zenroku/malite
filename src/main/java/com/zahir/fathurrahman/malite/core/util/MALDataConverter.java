@@ -16,7 +16,7 @@ public class MALDataConverter {
             try {
                 return Double.parseDouble(str(dbl));
             } catch (Exception e) {
-                log.info("invalid value of {}",dbl);
+                log.info("invalid double value of {}",dbl);
                 return null;
             }
     }
@@ -25,7 +25,7 @@ public class MALDataConverter {
         try {
             return LocalDate.parse(str(ld), DateTimeFormatter.ISO_DATE);
         } catch (Exception e) {
-            log.info("invalid value of {}",ld);
+            log.info("invalid localdate value of {}",ld);
             return null;
         }
     }
@@ -34,7 +34,7 @@ public class MALDataConverter {
         try {
             return LocalDateTime.parse(str(ldt),DateTimeFormatter.ISO_DATE_TIME);
         } catch (Exception e) {
-            log.info("invalid value of {}",ldt);
+            log.info("invalid localdatetime value of {}",ldt);
             return null;
         }
     }
@@ -43,7 +43,7 @@ public class MALDataConverter {
         try {
             return Long.parseLong(str(lg));
         } catch (Exception e) {
-            log.info("invalid value of {}",lg);
+            log.info("invalid long value of {}",lg);
             return null;
         }
     }
@@ -52,7 +52,7 @@ public class MALDataConverter {
         try {
             return Integer.parseInt(str(itg));
         } catch (Exception e) {
-            log.info("invalid value of {}",itg);
+            log.info("invalid integer value of {}",itg);
             return null;
         }
     }

@@ -1,4 +1,4 @@
-package com.zahir.fathurrahman.malite.app.model.helper;
+package com.zahir.fathurrahman.malite.app.model.mal;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class QueryParameter {
+public class MALQueryParameter {
     private Integer id;
     private String q;
     private Integer limit;

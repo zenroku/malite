@@ -1,7 +1,7 @@
-package com.zahir.fathurrahman.malite.app.model.helper.node;
+package com.zahir.fathurrahman.malite.app.model.mal.node;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.zahir.fathurrahman.malite.app.model.helper.MALPaging;
+import com.zahir.fathurrahman.malite.app.model.mal.MALPaging;
 import lombok.Getter;
 import lombok.Setter;
 

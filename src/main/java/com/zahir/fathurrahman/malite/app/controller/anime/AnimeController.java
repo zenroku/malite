@@ -8,6 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 public interface AnimeController {
     BaseResponseData get(HttpServletRequest request);
     BaseResponseData getAnimeDetail(HttpServletRequest request);
-    BaseResponseData getAnimeRanking(HttpServletRequest request);
-    BaseResponse syncDbAnime();
+    BaseResponseData getAnimeList(HttpServletRequest request);
+    BaseResponse syncDbAnime() throws InterruptedException;
 }

@@ -1,8 +1,8 @@
 package com.zahir.fathurrahman.malite.app.service.helper.impl;
 
 import com.zahir.fathurrahman.malite.app.constant.Modules;
-import com.zahir.fathurrahman.malite.app.model.helper.MALHTTPResponse;
-import com.zahir.fathurrahman.malite.app.model.helper.QueryParameter;
+import com.zahir.fathurrahman.malite.app.model.mal.MALHTTPResponse;
+import com.zahir.fathurrahman.malite.app.model.mal.MALQueryParameter;
 import com.zahir.fathurrahman.malite.app.service.helper.MALRequestService;
 import com.zahir.fathurrahman.malite.core.config.AppVarConfig;
 import com.zahir.fathurrahman.malite.core.util.CustomMapper;
@@ -25,7 +25,7 @@ public class MALRequestServiceImpl implements MALRequestService {
     @Override
     public MALHTTPResponse get(
             String uri,
-            QueryParameter qp,
+            MALQueryParameter qp,
             Modules module
     ) {
         MALHTTPResponse response = new MALHTTPResponse();
