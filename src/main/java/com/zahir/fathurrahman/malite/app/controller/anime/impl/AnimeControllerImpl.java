@@ -29,7 +29,7 @@ public class AnimeControllerImpl implements AnimeController {
     @Override
     @GetMapping
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "query",name = "q")
+            @ApiImplicitParam(paramType = "query",name = "q",dataTypeClass = String.class)
     })
     public BaseResponseData get(HttpServletRequest request) {
         return animeService.searchAnime(request);
@@ -38,8 +38,8 @@ public class AnimeControllerImpl implements AnimeController {
     @Override
     @GetMapping("/detail")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "query",name = "id", value = "56885"),
-            @ApiImplicitParam(paramType = "query",name = "fields", value = AppConst.ANIME_ALL_DETAIL_FIELDS)
+            @ApiImplicitParam(paramType = "query",name = "id", value = "56885", dataTypeClass = String.class),
+            @ApiImplicitParam(paramType = "query",name = "fields", value = AppConst.ANIME_ALL_DETAIL_FIELDS, dataTypeClass = String.class)
     })
     public BaseResponseData getAnimeDetail(HttpServletRequest request) {
         return animeService.getAnimeDetail(request);
@@ -48,10 +48,10 @@ public class AnimeControllerImpl implements AnimeController {
     @Override
     @GetMapping("/list")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "query",name = "filters",value = AppConst.LIST_QP_FILTERS_EXAMPLE),
-            @ApiImplicitParam(paramType = "query",name = "sorts", value = AppConst.LIST_QP_FILTERS_SORT),
-            @ApiImplicitParam(paramType = "query",name = "limit", value = "10"),
-            @ApiImplicitParam(paramType = "query",name = "page", value = "0")
+            @ApiImplicitParam(paramType = "query",name = "filters",value = AppConst.LIST_QP_FILTERS_EXAMPLE, dataTypeClass = String.class),
+            @ApiImplicitParam(paramType = "query",name = "sorts", value = AppConst.LIST_QP_FILTERS_SORT, dataTypeClass = String.class),
+            @ApiImplicitParam(paramType = "query",name = "limit", value = "10", dataTypeClass = String.class),
+            @ApiImplicitParam(paramType = "query",name = "page", value = "0", dataTypeClass = String.class)
     })
     public BaseResponseData getAnimeList(HttpServletRequest request) {
         return animeService.getAnimeList(request);
@@ -60,7 +60,6 @@ public class AnimeControllerImpl implements AnimeController {
     @Override
     @PostMapping("/sync_db_anime")
     public BaseResponse syncDbAnime() throws InterruptedException {
-//        return animeSync.syncBySeason(2024,"winter");
         return animeSync.syncByRank();
     }
 }

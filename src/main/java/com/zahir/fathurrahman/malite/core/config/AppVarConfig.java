@@ -12,6 +12,7 @@ import javax.persistence.Embeddable;
 public class AppVarConfig {
     private final Dotenv dotenv = Dotenv.configure().directory("/").ignoreIfMissing().ignoreIfMalformed().filename(".env").load();
     private final String PORT = dotenv.get("PORT");
+    private final String ENV = dotenv.get("ENV");
 
     private final String DB_URL = dotenv.get("DB_URL");
     private final String DB_USERNAME = dotenv.get("DB_USERNAME");
